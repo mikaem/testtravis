@@ -11,10 +11,14 @@ install:
     - export PATH="$HOME/miniconda/bin:$PATH"
     - unset PYTHONPATH
     - conda config --set always_yes yes 
+    - hash -r
+    - conda update -q conda
+    # Useful for debugging any issues with conda
+    - conda info -a
     - conda config --add channels mikaem/label/dev
     - conda config --add channels mikaem
     #- conda config --add channels mpi4py
-    - conda install Cython mpi4py h5py=2.6.0 pytest
+    - conda install mpi4py h5py=2.6.0 pytest
 
 script:
     - py.test
