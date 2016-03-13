@@ -14,7 +14,7 @@ install:
     - conda config --add channels mikaem/label/dev
     - conda config --add channels mikaem
     - conda config --add channels mpi4py
-    - conda install mpi4py h5py=2.6.0
+    - conda install mpi4py h5py=2.6.0 pytest
 
 script:
     - py.test
