@@ -21,12 +21,12 @@ before_install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100
   - which gcc
-  - which cc
-  - which c++
+  - cc --version
+  - c++ --version
   - sudo update-alternatives --set cc /usr/bin/gcc
   - sudo update-alternatives --set c++ /usr/bin/g++
-  - which cc
-  - which c++
+  - cc --version
+  - c++ --version
   - export CC=/usr/bin/gcc-4.9
   - export CXX=/usr/bin/g++-4.9
   - gcc --version
