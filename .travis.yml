@@ -6,13 +6,23 @@ python:
 sudo: false
 
 addons:
- apt:
-   sources:
-   - ubuntu-toolchain-r-test
-   packages:
-   - gcc-4.9
-   - g++-4.9
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.9
+      - g++-4.9
 
+before_install:
+  - gcc --version
+  - gcc-4.9 --version
+  - ln -s gcc-4.9 gcc
+  - ln -s g++-4.9 g++
+  - gcc --version
+  - gcc-4.9 --version
+  - g++ --version
+  - g++-4.9 --version
+  
 install:
     - wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
     - bash miniconda.sh -b -p $HOME/miniconda
