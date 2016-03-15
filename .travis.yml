@@ -3,7 +3,7 @@ language: python
 python:
     - "2.7"
 
-sudo: false
+#sudo: false
 
 addons:
   apt:
@@ -19,6 +19,8 @@ before_install:
   - which gcc
   - which gcc-4.9
   - ln -s gcc gcc-4.9
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100
   - which gcc
   - export CC=/usr/bin/gcc-4.9
   - export CXX=/usr/bin/g++-4.9
