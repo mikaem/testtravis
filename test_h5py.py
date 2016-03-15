@@ -1,5 +1,6 @@
 import pytest
 import mpi4py
+from dolfin import *
 from mpi4py.MPI import COMM_WORLD as comm
 import h5py
 
