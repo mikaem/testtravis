@@ -18,8 +18,6 @@ before_install:
   - gcc-4.9 --version
   - which gcc
   - which gcc-4.9
-  - ln -s gcc gcc-4.9  
-  - locate gcc-4.9
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100
   - which gcc
