@@ -5,12 +5,9 @@ python:
 
 sudo: false
 
-addons:
-  apt:
-    packages:
-      - hwloc
-
 install:
+    - ls /usr/lib/x86_64-linux-gnu/
+    - ls /usr/lib
     - wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
     - bash miniconda.sh -b -p $HOME/miniconda
     - export PATH="$HOME/miniconda/bin:$PATH"
@@ -18,9 +15,7 @@ install:
     - conda config --set always_yes yes 
     - conda config --add channels mikaem/label/test
     - conda config --add channels mikaem
-    - conda install h5py=2.6.0 fenics=1.7.0 pyvtk mpi4py pytest boost=1.57.0
-    - ls /usr/lib/x86_64-linux-gnu/
-    - ls /usr/lib
+    - conda install h5py=2.6.0 fenics=1.7.0 pyvtk mpi4py pytest hwloc boost=1.57.0
 
 script:
     - py.test
