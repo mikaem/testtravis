@@ -20,6 +20,7 @@ install:
     - conda config --add channels mikaem
     - conda install h5py=2.6.0 fenics=1.7.0 pyvtk mpi4py pytest boost=1.57.0
     - ls /usr/lib/x86_64-linux-gnu/
+    - ls /usr/lib
 
 script:
     - py.test
