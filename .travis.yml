@@ -5,24 +5,10 @@ python:
 
 sudo: false
 
-#addons:
-  #apt:
-    #sources:
-      #- ubuntu-toolchain-r-test
-    #packages:
-      #- gcc-4.9
-      #- g++-4.9
-
-before_install:
-  #- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
-  #- sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100
-  #- which gcc
-  #- cc --version
-  #- c++ --version
-  #- sudo update-alternatives --set cc /usr/bin/gcc
-  #- sudo update-alternatives --set c++ /usr/bin/g++
-  #- cc --version
-  #- c++ --version
+addons:
+  apt:
+    packages:
+      - hwloc
 
 install:
     - wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
@@ -32,7 +18,7 @@ install:
     - conda config --set always_yes yes 
     - conda config --add channels mikaem/label/test
     - conda config --add channels mikaem
-    - conda install h5py=2.6.0 fenics=1.7.0 pyvtk mpi4py hwloc pytest boost=1.57.0
+    - conda install h5py=2.6.0 fenics=1.7.0 pyvtk mpi4py pytest boost=1.57.0
 
 script:
     - py.test
