@@ -12,7 +12,7 @@ install:
     - unset PYTHONPATH
     - conda config --set always_yes yes 
     - conda config --add channels mikaem/label/docker
-    - conda install h5py=2.6.0 fenics=2016.2.dev pytest
+    - conda install h5py=2.6.0 fenics=2016.1 pytest
     - instant-clean
     - ldd $HOME/miniconda/lib/libpetsc.so
     - ldd $HOME/miniconda/lib/libdolfin.so
