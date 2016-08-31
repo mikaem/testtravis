@@ -12,11 +12,13 @@ requirements:
   build:
     - python
     - fenics ==2016.1
+    - h5py-parallel
     
 
   run:
     - python
     - fenics ==2016.1
+    - h5py-parallel
 
 test:
     requires:
