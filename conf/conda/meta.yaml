@@ -1,0 +1,24 @@
+package:
+  name: testtravis
+  version: "1.0"
+  
+source:
+  git_url: ../../
+
+build:
+  number: 10
+
+requirements:
+  build:
+    - python
+    - fenics ==2016.1
+    
+
+  run:
+    - python
+    - fenics ==2016.1
+
+test:
+    requires:
+      - pytest
+
