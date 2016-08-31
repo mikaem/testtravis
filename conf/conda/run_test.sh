@@ -1,1 +1,2 @@
-mpirun -np 1 py.test
+cd $SRC_DIR
+py.test
