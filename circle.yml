@@ -1,0 +1,25 @@
+machine:
+  environment:
+    CONDA_ROOT: /home/ubuntu/miniconda
+    PATH: ${CONDA_ROOT}/bin:${PATH}
+
+dependencies:
+  cache_directories:
+    - /home/ubuntu/miniconda
+
+  override:
+    - >
+      if [[ ! -d ${CONDA_ROOT} ]]; then
+          echo "Installing Miniconda...";
+          wget --quiet https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh &&
+          bash Miniconda-latest-Linux-x86_64.sh -b -p ${CONDA_ROOT};
+      else
+          echo "Using cached Miniconda install";
+      fi
+    - conda update -q conda
+    - conda info -a
+    - conda install -y pytest conda-build
+
+test:
+  override:
+    - conda build conf/conda
