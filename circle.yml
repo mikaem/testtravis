@@ -20,7 +20,7 @@ dependencies:
     - conda update -q conda
     - conda info -a
     - conda config --add channels mikaem/label/docker-travis
-    - conda install -y pytest conda-build
+    - conda install -y pytest conda-build=1.21.4
 
 test:
   override:
