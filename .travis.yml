@@ -35,6 +35,6 @@ after_failure:
 script:
     - py.test
 
-cache:
-    directories:
-    - $HOME/miniconda/*
+#cache:
+    #directories:
+    #- $HOME/miniconda/*
