@@ -5,6 +5,10 @@ python:
 
 sudo: false
 
+cache:
+  directories:
+    - $HOME/miniconda
+  
 install:
     - >
       if [[ ! -d $HOME/miniconda ]]; then
