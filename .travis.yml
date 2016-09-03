@@ -5,7 +5,7 @@ python:
 
 sudo: false
 
-install:
+before_install:
     - >
       if [[ ! -d $HOME/miniconda ]]; then
           echo "Installing Miniconda...";
@@ -14,6 +14,8 @@ install:
       else
           echo "Using cached Miniconda install";
       fi
+
+install:
     #- wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
     #- bash miniconda.sh -b -p $HOME/miniconda
     - export PATH="$HOME/miniconda/bin:$PATH"
@@ -25,14 +27,13 @@ install:
     - ldd $HOME/miniconda/lib/libpetsc.so
     - ldd $HOME/miniconda/lib/libdolfin.so
 
-cache:
-    directories:
-      - $HOME/miniconda
-
-
 after_failure:
     - cd $HOME/.instant/error
     - bash /home/travis/build/mikaem/testtravis/print_compilelog.sh
     
 script:
     - py.test
+
+cache:
+    directories:
+    - $HOME/miniconda
