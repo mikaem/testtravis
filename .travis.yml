@@ -18,8 +18,8 @@ sudo: false
 install:
     #- ls $HOME/miniconda
     - wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
-    - bash miniconda.sh -b -p $HOME/miniconda
-    - export PATH="$HOME/miniconda/bin:$PATH"
+    - bash miniconda.sh -b -p $HOME/miniconda2
+    - export PATH="$HOME/miniconda2/bin:$PATH"
     - unset PYTHONPATH
     - conda config --set always_yes yes 
     - conda config --add channels mikaem/label/docker-conda-gcc
@@ -37,4 +37,4 @@ script:
 
 cache:
     directories:
-    - $HOME/miniconda/*
+    - $HOME/miniconda2/*
