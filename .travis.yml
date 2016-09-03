@@ -5,10 +5,6 @@ python:
 
 sudo: false
 
-#cache:
-  #directories:
-    #- $HOME/miniconda
-  
 install:
     - >
       if [[ ! -d $HOME/miniconda ]]; then
@@ -28,6 +24,11 @@ install:
     - instant-clean
     - ldd $HOME/miniconda/lib/libpetsc.so
     - ldd $HOME/miniconda/lib/libdolfin.so
+
+cache:
+    directories:
+      - $HOME/miniconda
+
 
 after_failure:
     - cd $HOME/.instant/error
