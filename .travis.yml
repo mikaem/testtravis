@@ -5,20 +5,9 @@ python:
 
 sudo: false
 
-before_install:
-    - >
-      if [[ ! -d $HOME/miniconda/conda-bld ]]; then
-          echo "Installing Miniconda...";
-          wget --quiet https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh &&
-          bash Miniconda-latest-Linux-x86_64.sh -b -p $HOME/miniconda
-      else
-          echo "Using cached Miniconda install";
-      fi
-
 install:
-    #- ls $HOME/miniconda
-    #- wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
-    #- bash miniconda.sh -b -p $HOME/miniconda
+    - wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
+    - bash miniconda.sh -b -p $HOME/miniconda
     - export PATH="$HOME/miniconda/bin:$PATH"
     - unset PYTHONPATH
     - conda config --set always_yes yes 
@@ -34,8 +23,3 @@ after_failure:
     
 script:
     - py.test
-
-#after_install:
-cache:
-  directories:
-  - $HOME/miniconda/*
