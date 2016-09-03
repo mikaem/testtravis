@@ -35,7 +35,7 @@ after_failure:
 script:
     - py.test
 
-after_install:
-  cache:
-    directories:
-    - $HOME/miniconda/*
+#after_install:
+cache:
+  directories:
+  - $HOME/miniconda/*
