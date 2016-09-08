@@ -17,6 +17,7 @@ dependencies:
           echo "Using cached Miniconda install";
       fi
     - conda config --set always_yes yes
+    - conda config --set show_channel_urls True
     - conda update -q conda
     - conda info -a
     - conda config --add channels conda-forge
