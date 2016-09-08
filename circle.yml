@@ -22,6 +22,8 @@ dependencies:
     - conda info -a
     - conda config --add channels conda-forge
     - conda config --add channels mikaem/label/docker-forge-test
+    - ldd $HOME/miniconda/lib/libpetsc.so
+    - ldd $HOME/miniconda/lib/libdolfin.so
     #- conda install -y h5py-parallel fenics=2016.2.dev pytest conda-build=1.21.4
 
 test:
