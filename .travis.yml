@@ -12,6 +12,7 @@ install:
     - unset PYTHONPATH
     - conda config --set always_yes yes 
     - conda config --set show_channel_urls True
+    - conda update -q conda
     - conda config --add channels conda-forge
     - conda config --add channels mikaem/label/docker-forge-test
     - conda install h5py-parallel fenics=2016.2.dev pytest
