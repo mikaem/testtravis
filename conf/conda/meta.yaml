@@ -11,16 +11,8 @@ build:
 requirements:
   build:
     - python
-    - fenics ==2016.2.dev
-    - h5py-parallel
-    
+    - mpi4py
 
   run:
     - python
-    - fenics ==2016.2.dev
-    - h5py-parallel
-
-test:
-    requires:
-      - pytest
-
+    - mpi4py
