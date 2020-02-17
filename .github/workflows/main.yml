@@ -24,6 +24,6 @@ jobs:
     - run: which python
     - run: |
         conda create --name condaenv numpy scipy sympy pytest
-        conda activate condaenv
+        source activate condaenv
         pytest testfile.py
 
