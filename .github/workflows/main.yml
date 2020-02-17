@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: setup-conda
+      uses: s-weigand/setup-conda@v1.0.2
+    - run: conda --version
+    - run: which python
+    - run: |
+        conda create --name condaenv numpy scipy sympy pytest
+        conda activate condaenv
+        pytest testfile.py
+
